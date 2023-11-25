@@ -55,12 +55,12 @@ public class App implements AutoCloseable
             User richard = new User("richard", Set.of(admin));
 
             authz.createUserHasRole(List.of(paula, richard));
-            authz.isUserAuthorized("paula", "analyst-catalog");
-            authz.isUserAuthorized("paula", "edit-product");
-            authz.isUserAuthorized("richard", "admin-catalog");
-            authz.isUserAuthorized("richard", "edit-product");
-            authz.isUserAuthorized("richard", "view-product");
-            authz.isUserAuthorized("richard", "fake-role");
+            authz.isUserAuthorized("paula", "analyst-catalog"); // User paula has role analyst-catalog
+            authz.isUserAuthorized("paula", "edit-product"); // User paula does not have role edit-product
+            authz.isUserAuthorized("richard", "admin-catalog"); // User richard has role admin-catalog
+            authz.isUserAuthorized("richard", "edit-product"); // User richard has role edit-product
+            authz.isUserAuthorized("richard", "view-product"); // User richard has role view-product
+            authz.isUserAuthorized("richard", "fake-role"); // User richard does not have role fake-role
         }
     }
 }
